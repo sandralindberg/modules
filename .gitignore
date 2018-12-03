@@ -1,5 +1,5 @@
 index.php
 vendor
-composer-lock.json
+composer.lock
 composer.json
 tmp

@@ -1,4 +1,5 @@
-public
+index.php
+scripts.min.js
 vendor
 composer.lock
 composer.json

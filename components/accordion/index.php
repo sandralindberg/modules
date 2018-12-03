@@ -1,7 +1,8 @@
 <template src="accordion.twig" />
-<style src="../components/accordion/accordion.css" external />
+<style src="accordion.css" external />
 
-<script src="../components/accordion/accordion.js" external />
+<script src="accordion.js" external />
+
 <script>
 document.addEventListener("DOMContentLoaded", function() { 
 

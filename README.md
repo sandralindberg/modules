@@ -1,5 +1,5 @@
 # modules
-Markup, scripts &amp; styles for components. Work in progress. Built with [Sade boilderplate](https://github.com/sadephp/boilerplate).
+Markup, scripts &amp; styles for components. Work in progress. Built with [Sade boilerplate](https://github.com/sadephp/boilerplate).
 
 
 ## License

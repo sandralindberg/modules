@@ -1,5 +1,6 @@
-index.php
+public
 vendor
 composer.lock
 composer.json
 tmp
+sade.php

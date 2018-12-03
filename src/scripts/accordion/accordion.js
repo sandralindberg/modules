@@ -64,12 +64,16 @@
   
     	var isOpen = Utils.strToBool( btn.getAttribute('aria-expanded') );
     	
-      if(!this.options.allowMultipleOpen && !isOpen) {
+      if( !this.options.allowMultipleOpen && !isOpen ) {
     		var openItems = this.elem.getElementsByClassName(this.options.openClass);
         if(openItems.length != 0) {
           this.closeOpenItems(openItems);
         }
     	} 
+
+      /*else if( !this.options.allowToggleOpen && isOpen ) {
+        return true;
+      }*/
     	
 
     	item.classList.toggle(this.options.openClass, !isOpen);
@@ -127,7 +131,8 @@
 	  itemClass : 'accordion__item',
 	  btnClass : 'accordion__btn',
 	  openClass : 'is-open',
-	  allowMultipleOpen : true 
+	  allowMultipleOpen : true,
+    allowToggleOpen : true 
 	};
 
   Accordion.cutsTheMustard = typeof Utils.features !== 'undefined' && Utils.features.rAF && Utils.features.bind && Utils.features.classList;

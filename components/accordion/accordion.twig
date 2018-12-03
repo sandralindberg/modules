@@ -1,27 +1,22 @@
-<dl class="accordion js-accordion">
-  <dd class="accordion__item">
-    <button class="accordion__btn" aria-expanded="false">
-      Section 1
-      <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 10 10">
-        <rect class="is-hidden-open" height="8" width="2" y="1" x="4"/>
-        <rect height="2" width="8" y="4" x="1"/>
-      </svg> 
-    </button> 
-  </dd>
-  <dt class="accordion__body" aria-hidden="true">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget aliquet scelerisque. Pellentesque sodales turpis vitae venenatis vehicula. Ut id porta velit. Ut eu dignissim dui, quis gravida est. Cras quis venenatis mauris, a bibendum enim. Sed at augue libero. Nullam tortor metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum risus facilisis imperdiet quis sed eros.</p>
-  </dt>
-  <dd class="accordion__item">
+{% if items %}
+  <dl role="presentation" class="accordion js-accordion">
+    
+    {% for item in items %}
 
-    <button class="accordion__btn" aria-expanded="false">
-      Section 2
-      <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 10 10">
-        <rect class="is-hidden-open" height="8" width="2" y="1" x="4"/>
-        <rect height="2" width="8" y="4" x="1"/>
-      </svg>   
-    </button>
-  </dd>
-  <dt class="accordion__body" aria-hidden="true">
-    <p>Nullam tortor metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum risus facilisis imperdiet quis sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget aliquet scelerisque. Pellentesque sodales turpis vitae venenatis vehicula. Ut id porta velit. Ut eu dignissim dui, quis gravida est. Cras quis venenatis mauris, a bibendum enim. Sed at augue libero.</p>
-  </dt>
-</dl>
+      <dt role="heading" class="accordion__item" aria-level="3">
+        <button class="accordion__btn" aria-expanded="false" type="button">
+          {{ item.title }}
+          <svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 10 10">
+            <rect class="is-hidden-open" height="8" width="2" y="1" x="4"/>
+            <rect height="2" width="8" y="4" x="1"/>
+          </svg> 
+        </button> 
+      </dt>
+      <dd class="accordion__body" aria-hidden="true" role="region">
+        {{ item.content | raw }}
+      </dd>
+
+    {% endfor %}
+    
+  </dl>
+{% endif %}
